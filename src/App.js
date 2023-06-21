@@ -13,6 +13,8 @@ import { Routes,Route } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import {NewProducts} from './NewProducts'
+import Cart from './Cart'
+
 
 function App() {
   const navigate = useNavigate();
@@ -53,6 +55,7 @@ function App() {
             <Route path='/addCategories' element= {<AddCategories/>}/>
             <Route path='/addProducts' element= {<AddProducts/>}/>
             <Route path='/NewProducts/:id' element= {<NewProducts />}/>
+            <Route path='/cart' element= {<Cart/>}/>
         </Routes>
 
 

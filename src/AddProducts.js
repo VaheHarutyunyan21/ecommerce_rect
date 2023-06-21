@@ -8,7 +8,7 @@ function AddProducts() {
         const [price, setPrice] = useState('');
         const [categories, setCategories,categoriesRef] = useState([{}]);
         const [categoryId, setCategoryId] = useState('');
-
+        const [img, setImg] = useState('');
 
 
 
@@ -40,11 +40,23 @@ function AddProducts() {
           console.log(event.target.value);
 
       };
+      const hendelimg = (e) => {
+        setImg(e.target.files[0]) 
+      }
+
 
 
         const handleSubmit = async(event) => {
           event.preventDefault();
           console.log(name,description,price);
+          const formData = new FormData();
+          formData.append('image', img);
+
+      const responsImg = await fetch("http://localhost:5000/upload", {
+          method: 'POST',
+          body: formData,
+      });
+      const dataImg = await responsImg.json();
           
           const respons=await fetch('http://localhost:5000/products',{
               method:"POST",
@@ -55,7 +67,8 @@ function AddProducts() {
                   name,
                   description,
                   price,
-                  categoryId
+                  categoryId,
+                  img:dataImg.filename
 
               }) 
           })
@@ -65,6 +78,7 @@ function AddProducts() {
             alert("Hajoxutyamb avelacvel e")
             window.location.reload();
         }
+        // <img className='Header-logo' src={`http://localhost:5000/img/logo.png`} alt='logo'/>
 
        
 
@@ -105,6 +119,11 @@ function AddProducts() {
               Price:
               <input type="text" value={price} onChange={handlePriceChange} />
             </label>
+            <label>
+              Img:
+              <input type='file' accept="image/*" onChange={hendelimg}/>
+            </label>
+
             <button type="submit">Add Products</button>
           </form>
         );

@@ -7,12 +7,14 @@ import logo1 from './img/logoheart.svg'
 import { Link } from 'react-router-dom';
 import { useEffect,useState } from 'react';
 import { Routes,Route } from 'react-router-dom';
-import Cart from './Cart';
+// import Cart from './Cart';
+
 
 export default function Header() {
 
     const [data, setData] = useState([]);
-    const [dataCart,setDataCart]=useState([]);
+    // const [dataCart,setDataCart]=useState([]);
+
     
           useEffect(()=>{
            fetch('http://localhost:5000/categorys',{
@@ -31,26 +33,39 @@ export default function Header() {
               <p className='link'>{dat.name}</p>
         </div>)
 
-        const token = localStorage.getItem('token');
-        // console.log(token);
-        const payload = atob(token.split('.')[1]);
-        const decodedToken = JSON.parse(payload);
-        console.log('User ID:', decodedToken.id);
-        const userId=decodedToken.id;
+     
 
-        useEffect(()=>{
 
-fetch(`http://localhost:5000/dataCarts/${userId}`, {
-  method: 'GET',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-})
-.then(response => response.json())
-.then(dat => setDataCart(dat.productData))
-.catch(error => console.error(error))
 
-        },[])
+
+//         const token = localStorage.getItem('token');
+//         console.log(token);
+       
+            
+
+//         useEffect(()=>{
+//             if (token!==null) {
+//                 const payload = atob(token.split('.')[1]);
+    
+//             const decodedToken = JSON.parse(payload);
+//             console.log('User ID:', decodedToken.id);
+//              const userId=decodedToken.id;
+
+//              fetch(`http://localhost:5000/dataCarts/${userId}`, {
+//   method: 'GET',
+//   headers: {
+//     'Content-Type': 'application/json',
+//   },
+// })
+// .then(response => response.json())
+// .then(dat => setDataCart(dat))
+// .catch(error => console.error(error))
+//             }
+
+
+
+
+//         },[])
 
 
 
@@ -75,7 +90,7 @@ fetch(`http://localhost:5000/dataCarts/${userId}`, {
                 </div>
             </div>
         </nav>
-        <Cart name={dataCart} />
+        {/* <Cart name={dataCart} /> */}
     
     </div>
 }

@@ -24,9 +24,10 @@ function Products() {
           <Link to={`/NewProducts/${dat.id}`}>
                 <h3 style={{ marginTop: '0'}}>{dat.name}</h3>
             </Link>
-               
+            <img className='Header-logo' src={`http://localhost:5000/img/${dat.img}`} alt='logo'/>
              <h4 className='classDtaAll' >{dat.name}</h4>
              <h2 className='classDtaAll'> Դ {dat.price}</h2> 
+             
              <button className='classbutton' ><h4>Գնել</h4></button>
          </div>
          )
