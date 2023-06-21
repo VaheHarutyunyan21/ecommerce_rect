@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.Header {
+    background-color: black;
+    height: 19vh;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 5000;
+    
+  }
+
+
+.link {
+    padding: 3px;
+    text-decoration: none;
+    color: white;
+    align-items: center;
+  }
+.divHeader{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.divHeadr1{
+    width: 320px;
+    display:flex;
+
+}
+.usericon{
+    background-color: black;
+    width: 20px;
+    height: 20px;
+}
+.logoimg{
+    height: 19vh;
+width: 100%;
+
+}
+.logoheart{
+    background-color: black;
+}
+.basket{
+    background-color: black;
+    margin-left: 20px;
+}
+
