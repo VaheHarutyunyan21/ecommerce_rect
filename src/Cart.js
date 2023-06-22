@@ -14,10 +14,9 @@ export default function Cart(props) {
    useEffect(()=>{
     if (token!==null) {
         const payload = atob(token.split('.')[1]);
-
-    const decodedToken = JSON.parse(payload);
-    console.log('User ID:', decodedToken.id);
-     const userId=decodedToken.id;
+        const decodedToken = JSON.parse(payload);
+        console.log('User ID:', decodedToken.id);
+        const userId=decodedToken.id;
 
      fetch(`http://localhost:5000/dataCarts/${userId}`, {
 method: 'GET',
@@ -29,8 +28,11 @@ headers: {
 .then(dat => setDataCart(dat))
 .catch(error => console.error(error))
     }
-
 console.log(dataCart);
+},[])
+
+useEffect(()=>{
+  
 
 
 },[])

@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# ecommerce_rect
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+## Description
 
-### `npm start`
+This is an eCommerce web application built using React. It provides a user-friendly interface to browse and view products from the watch store. The application presents a time shop where users can view products without registration. Users can register and create an account to make purchases, while an admin can log in and make relevant updates.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Features
+* User registration and login functionality for personalized shopping experience.
+* Browse and search products by category or keywords.
+* View detailed product information including images, price, and description.
+* Add products to the shopping basket for later purchase.
+* Checkout process with order placement and payment integration.
+* User profile management for viewing order history and updating personal details.
+* Categories management for organizing and filtering products.
+* Product and product image management for adding, updating, and deleting products.
+* Shipping addresses management for easy delivery options.
+* Payment card storage for convenient payment options.
+* Order management for tracking orders and managing order items.
+* Basket management for handling product selection during the shopping process.
+* Admin panel for managing products, products images, categories, orders, and users.
+* Access control to restrict unauthorized access to user functionalities.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Admin Panel Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Admin dashboard for overview and statistical insights.
+Product management for adding, updating, and deleting products.
+Product image management for adding, updating, and deleting product images.
+Category management for organizing and filtering products.
+Order management for viewing and managing customer orders.
+User management for viewing and managing user accounts.
+Access control to restrict unauthorized access to admin functionalities.
 
-### `npm run build`
+### Technologies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* React: A JavaScript library for building user interfaces
+* Redux: A predictable state container for JavaScript apps
+* React Router: A routing library for React applications
+* CSS: Cascading Style Sheets for styling the application
+* react-icons: A library for adding icons to the application
+* fetch: A JavaScript API for making HTTP requests
+* map: A JavaScript method for iterating over arrays
+* Hooks: React hooks for managing state and side effects:
+ * localStorage: A web API for storing data locally in the browser
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installing
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
+ https://github.com/VaheHarutyunyan21/ecommerce_rect.git
+2. Navigate to the project directory:
+ cd ecommerce_rect
+3. Install the dependencies:
+ npm install
+4. Start the development server using:
+ npm start
 
-### `npm run eject`
+Open your web browser and access the application at: http://localhost:3000.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

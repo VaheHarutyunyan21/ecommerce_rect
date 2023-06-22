@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Categories() {
     const [data, setData] = useState([]);
+    //const [delite, deleteFunc] = useState([]);
     
           useEffect(()=>{
            fetch('http://localhost:5000/categorys',{
@@ -17,7 +18,8 @@ function Categories() {
             .catch(error => console.error(error))
         },[])
 
-        const deleteFunc = async(productId) => {
+       
+          const deleteFunc = async(productId) => {
           
           const respons=await fetch(`http://localhost:5000/deleteCategorys/${productId}`,{
               method:"DELETE",
@@ -32,6 +34,12 @@ function Categories() {
             window.location.reload();
         }
         }; 
+
+
+  
+
+
+        
          const  myList =  data.map((dat)=>
          <div key={dat.id}>
                <h2 >Name:  {dat.name}</h2>

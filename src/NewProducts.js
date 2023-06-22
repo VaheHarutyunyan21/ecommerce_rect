@@ -23,10 +23,12 @@ import { useEffect,useState } from 'react';
  return (
     <div className="newProductAll" >
       <div className="container">
+        <img className='Header-logo' src={`http://localhost:5000/img/${watch.img}`} alt='logo'/>
         <h2 >{watch.name}</h2>
+        
         <h2 className="h" >Դ {watch.price}</h2>
         <p className="p"><h4>Նկարագիր`</h4>{watch.description}</p>
-        <img className='Header-logo' src={`http://localhost:5000/img/${watch.img}`} alt='logo'/>
+        
           
           
           <button className="button" >Ավելացնել զամբյուղ</button>
