@@ -38,10 +38,21 @@ function Login() {
     const data = await respons.json()
     localStorage.setItem('token', data)
     console.log(respons);
-    console.log(data);
+    console.log(data,"token");
+    const payload = atob(data.split('.')[1]);
+    const decodedToken = JSON.parse(payload);
+    const Isadmin=decodedToken.isAdmin;
+    console.log(Isadmin);
     if (data !== null) {
-      alert("201")
+      if (Isadmin==0) {
+        alert("USer")
+       return navigate("/products")
+      }else{
+         alert("Admin")
       navigate("/admin")
+      }
+
+     
     }
   };
 

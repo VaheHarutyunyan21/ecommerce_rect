@@ -7,13 +7,15 @@ import logo1 from './img/logoheart.svg'
 import { Link } from 'react-router-dom';
 import { useEffect,useState } from 'react';
 import { Routes,Route } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 // import Cart from './Cart';
 
 
 export default function Header() {
 
+    const navigate = useNavigate();
     const [data, setData] = useState([]);
-    // const [dataCart,setDataCart]=useState([]);
+    const [dataCart,setDataCart]=useState([]);
 
     
           useEffect(()=>{
@@ -33,40 +35,6 @@ export default function Header() {
               <p className='link'>{dat.name}</p>
         </div>)
 
-     
-
-
-
-
-//         const token = localStorage.getItem('token');
-//         console.log(token);
-       
-            
-
-//         useEffect(()=>{
-//             if (token!==null) {
-//                 const payload = atob(token.split('.')[1]);
-    
-//             const decodedToken = JSON.parse(payload);
-//             console.log('User ID:', decodedToken.id);
-//              const userId=decodedToken.id;
-
-//              fetch(`http://localhost:5000/dataCarts/${userId}`, {
-//   method: 'GET',
-//   headers: {
-//     'Content-Type': 'application/json',
-//   },
-// })
-// .then(response => response.json())
-// .then(dat => setDataCart(dat))
-// .catch(error => console.error(error))
-//             }
-
-
-
-
-//         },[])
-
 
 
 
@@ -81,16 +49,13 @@ export default function Header() {
                        <Link to='/' > <img className='logoimg' src={logo} /></Link>
                     </div>
                     <div className='divHeadr1'>
-                        
                         <a href="" className='link'><img className='usericon' src={nkar} />  My Account  </a>
                         <a href="" className='link'>  <img className='logoheart' src={logo1} />  Wish List (0)  </a>
-                        <Link to='/cart'><a href="" className='link'>  <img className='basket' src={basket} /> </a></Link>
-                        
+                        <Link to='/cart' className='link'> <img className='basket' src={basket} /></Link>
+                        <a className='link'style={{cursor:'pointer'}} onClick={()=>{ localStorage.removeItem('token');navigate("/login");window.location.reload();}} > Exit </a>
                     </div>
                 </div>
             </div>
         </nav>
-        {/* <Cart name={dataCart} /> */}
-    
     </div>
 }

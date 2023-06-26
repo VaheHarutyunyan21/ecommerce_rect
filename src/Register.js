@@ -38,7 +38,6 @@ function Register() {
     const data = await respons.json()
     localStorage.setItem('token',data)
     console.log(respons);
-    console.log(data);
     if (data !== null) {
         alert("201")
         navigate("/login")

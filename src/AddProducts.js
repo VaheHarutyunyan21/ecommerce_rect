@@ -10,9 +10,6 @@ function AddProducts() {
         const [categoryId, setCategoryId] = useState('');
         const [img, setImg] = useState('');
 
-
-
-
         useEffect(()=>{
           fetch('http://localhost:5000/categorys',{
              method:"GET",
@@ -78,35 +75,12 @@ function AddProducts() {
             alert("Hajoxutyamb avelacvel e")
             window.location.reload();
         }
-        // <img className='Header-logo' src={`http://localhost:5000/img/logo.png`} alt='logo'/>
-
-       
-
-
-
         };
+
+
         return (
           <form onSubmit={handleSubmit} style={{marginTop:"30vh"}}>
 
-
-      <select onChange={handleSelectCategory}>
-        <option value="">-- Select a category --</option>
-        {categories.map((category) => (
-          <option key={category.id} value={category.id}>
-            {category.name}
-          </option>
-        ))}
-      </select> 
-            
-              
-              {/* <input list="browsers"  />
-              <datalist id="browsers">
-                  <option value="Internet Explorer"></option>
-                  <option value="Firefox"></option>
-                  <option value="Chrome"></option>
-                  <option value="Opera"></option>
-                  <option value="Safari"></option>
-              </datalist> */}
             <label>
               Name:
               <input type="text" value={name} onChange={handleNameChange} />
@@ -119,12 +93,22 @@ function AddProducts() {
               Price:
               <input type="text" value={price} onChange={handlePriceChange} />
             </label>
+            Categories:
+            <select onChange={handleSelectCategory}>      
+        <option value="">-- categories --</option>
+        {categories.map((category) => (
+          <option key={category.id} value={category.id}>
+            {category.name}
+          </option>
+        ))}
+      </select> 
+
             <label>
               Img:
               <input type='file' accept="image/*" onChange={hendelimg}/>
             </label>
 
-            <button type="submit">Add Products</button>
+            <button type="submit" style={{cursor:"pointer"}}> Add Products </button>
           </form>
         );
       }

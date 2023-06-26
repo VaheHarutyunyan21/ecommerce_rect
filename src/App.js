@@ -14,20 +14,15 @@ import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import {NewProducts} from './NewProducts'
 import Cart from './Cart'
-
+import Footer from './Footer';
 
 function App() {
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
-    // Retrieve data from localStorage
     const storedData = localStorage.getItem('token');
-    console.log(location.pathname);
-
-    if (storedData) {
-      // Do something with the retrieved data
-      console.log(storedData);
+    if (storedData) {      
     }
     else{
 
@@ -37,9 +32,6 @@ function App() {
       }
       else{
         return navigate("/login")
-        console.log(navigate.name);
-
-
       }
           }
   }, []);
@@ -57,6 +49,8 @@ function App() {
             <Route path='/NewProducts/:id' element= {<NewProducts />}/>
             <Route path='/cart' element= {<Cart/>}/>
         </Routes>
+        < Footer /> 
+
 
 
     </div>

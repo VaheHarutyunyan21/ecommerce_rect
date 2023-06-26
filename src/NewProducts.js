@@ -1,6 +1,5 @@
 import {useParams } from "react-router-dom";
 import { useEffect,useState } from 'react';
-// import {data} from './Data';
  import './NewProducts.css'
 
 
@@ -13,11 +12,7 @@ import { useEffect,useState } from 'react';
          fetch("http://localhost:5000/dataProducts/"+id)
         .then(res =>res.json())
         .then(res=>setWatch(res))   
-
-    },[])
-
- ;
-//  const product = data.find((product)=>product.id === +productid )
+    },[]);
  
 
  return (
@@ -28,14 +23,8 @@ import { useEffect,useState } from 'react';
         
         <h2 className="h" >Դ {watch.price}</h2>
         <p className="p"><h4>Նկարագիր`</h4>{watch.description}</p>
-        
-          
-          
-          <button className="button" >Ավելացնել զամբյուղ</button>
+          <button className="button" >Gnel</button>
       </div>
-        
-       
-        
     </div>)
  
  }

@@ -1,0 +1,16 @@
+.divFooter{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #303030;
+    
+}
+.footerP{
+    color: white;
+}
+.footerH{
+    margin: 7%;
+    color: white;
+}
+.divFooter1{
+    margin: 10px;
+}

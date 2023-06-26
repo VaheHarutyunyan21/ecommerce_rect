@@ -1,10 +1,15 @@
 import React from 'react';
 import { useEffect,useState } from 'react';
 import { Link } from 'react-router-dom';
+import Slideshow from './Slide';
 
 function Categories() {
     const [data, setData] = useState([]);
     //const [delite, deleteFunc] = useState([]);
+    const token = localStorage.getItem('token');
+    const payload = atob(token.split('.')[1]);
+    const decodedToken = JSON.parse(payload);
+    const Isadmin=decodedToken.isAdmin;
     
           useEffect(()=>{
            fetch('http://localhost:5000/categorys',{
@@ -28,32 +33,32 @@ function Categories() {
               }
           })
           const data = await respons.json()
-          console.log(data);
           if (data === 1) {
             alert("Ok")
             window.location.reload();
         }
         }; 
 
-
-  
-
-
         
          const  myList =  data.map((dat)=>
          <div key={dat.id}>
-               <h2 >Name:  {dat.name}</h2>
-               <button style={{cursor:'pointer'}} onClick={() => deleteFunc(dat.id)}>Delete</button>
-               <button style={{cursor:'pointer'}}>Edit</button>
+               <h3 >Name:  {dat.name}</h3>
+               { Isadmin == 1 ? (<button style={{cursor:'pointer'}} onClick={() => deleteFunc(dat.id)}>Delete</button>):("")}
+               { Isadmin == 1 ? (<button style={{cursor:'pointer'}}>Edit</button>):("")}
          </div>)
             
 
         return (
-          <div style={{marginTop:"50vh"}}>
-            <Link to='/addCategories'>
-                <button style={{cursor:'pointer'}}  >Add Categories</button>
-            </Link>
+          <div style={{marginTop:"25vh"}}>
+            <Slideshow />
+            <h1>Categories</h1>
+
+           { Isadmin == 1 ? (<Link to='/addCategories'>
+                <button style={{cursor:'pointer'}}  >Add Categories </button>
+            </Link>):("")}
+
              {myList}
+             
           </div>
         )
       }
